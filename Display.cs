@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Stocks
 {
-    public partial class Form2 : Form
+    public partial class Display : Form
     {
-        public Form2()
+        public Display()
         {
             InitializeComponent();
         }
