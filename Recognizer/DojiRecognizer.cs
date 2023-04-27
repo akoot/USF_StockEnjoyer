@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +7,11 @@ using System.Windows.Forms;
 
 namespace Stocks
 {
-    public partial class Settings : Form
+    internal class DojiRecognizer : Recognizer
     {
-        public Settings()
+        public override int[] Recognize(List<CandleStick> candleSticks)
         {
-            InitializeComponent();
-            new Stocks();
+            throw new NotImplementedException();
         }
     }
 }

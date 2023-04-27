@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stocks
 {
-    internal abstract class MultiRecognizer
+    internal abstract class Recognizer
     {
         public abstract int[] Recognize(List<CandleStick> candleSticks);
     }

@@ -9,8 +9,8 @@ namespace Stocks
 {
     internal class Stocks
     {
+        public List<CandleStick> CandleStickList;
         public Stocks() {
-            MessageBox.Show("INIT");
         }
     }
 }

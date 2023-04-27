@@ -47,27 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Recognizer\GravestoneDojiRecognizer.cs" />
+    <Compile Include="Recognizer\DragonflyDojiRecognizer.cs" />
     <Compile Include="Stocks.cs" />
     <Compile Include="CandleStick.cs" />
-    <Compile Include="MultiRecognizer.cs" />
-    <Compile Include="HammerRecognizer.cs" />
-    <Compile Include="DojiRecognizer.cs" />
-    <Compile Include="SingleRecognizer.cs" />
-    <Compile Include="Settings.cs">
+    <Compile Include="Recognizer\HammerRecognizer.cs" />
+    <Compile Include="Recognizer\DojiRecognizer.cs" />
+    <Compile Include="Recognizer\Recognizer.cs" />
+    <Compile Include="Forms\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.Designer.cs">
+    <Compile Include="Forms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Display.cs">
+    <Compile Include="Forms\Display.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Display.Designer.cs">
+    <Compile Include="Forms\Display.Designer.cs">
       <DependentUpon>Display.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Display.resx">
+    <EmbeddedResource Include="Forms\Display.resx">
       <DependentUpon>Display.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -79,7 +80,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Settings.resx">
+    <EmbeddedResource Include="Forms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

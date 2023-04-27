@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Stocks
 {
-    internal class HammerRecognizer : SingleRecognizer
+    internal class DragonflyDojiRecognizer : Recognizer
     {
         public override int[] Recognize(List<CandleStick> candleSticks)
         {
