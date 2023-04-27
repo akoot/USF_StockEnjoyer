@@ -11,9 +11,6 @@ using System.Windows.Forms;
 
 namespace Stocks
 {
-    /// <summary>
-    /// Main class that holds all of the information and functions between forms and such.
-    /// </summary>
     public partial class Settings : Form
     {
         readonly Stocks stocks = new Stocks();

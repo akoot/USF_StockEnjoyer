@@ -18,8 +18,7 @@ namespace Stocks
         }
 
         /// <summary>
-        /// TBD
-        /// Taken from ChatGPT as well as the older version of this project (Project2)
+        /// 
         /// </summary>
         void loadCandlesticks()
         {

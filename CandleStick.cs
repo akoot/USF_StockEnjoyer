@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Stocks
 {
+    /// <summary>
+    /// Candle Stick Class
+    /// </summary>
     internal class CandleStick
     {
         public DateTime Date { get; set; }
