@@ -47,13 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Recognizer\GravestoneDojiRecognizer.cs" />
-    <Compile Include="Recognizer\DragonflyDojiRecognizer.cs" />
+    <Compile Include="Recognizers\EveningStartRecognizer.cs" />
+    <Compile Include="Recognizers\MorningStarRecognizer.cs" />
+    <Compile Include="Recognizers\TheHaramiRecognizer.cs" />
+    <Compile Include="Recognizers\SpinningTopRecognizer.cs" />
+    <Compile Include="Recognizers\MarobuzoRecognizer.cs" />
+    <Compile Include="Recognizers\InvertedHammerRecognizer.cs" />
+    <Compile Include="Recognizers\GravestoneDojiRecognizer.cs" />
+    <Compile Include="Recognizers\DragonflyDojiRecognizer.cs" />
     <Compile Include="Stocks.cs" />
     <Compile Include="CandleStick.cs" />
-    <Compile Include="Recognizer\HammerRecognizer.cs" />
-    <Compile Include="Recognizer\DojiRecognizer.cs" />
-    <Compile Include="Recognizer\Recognizer.cs" />
+    <Compile Include="Recognizers\HammerRecognizer.cs" />
+    <Compile Include="Recognizers\DojiRecognizer.cs" />
+    <Compile Include="Recognizers\Recognizer.cs" />
     <Compile Include="Forms\Settings.cs">
       <SubType>Form</SubType>
     </Compile>

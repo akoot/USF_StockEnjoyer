@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Stocks
+namespace Stocks.Recognizers
 {
-    internal class HammerRecognizer : Recognizer
+    internal class SpinningTopRecognizer : Recognizer
     {
         public override int[] Recognize(List<CandleStick> candleSticks)
         {
