@@ -23,6 +23,7 @@ namespace Stocks
         {
             InitializeComponent();
             UpdateCsvListComboBox(null, null);
+            comboBox_csvList_Changted(null, null);
         }
 
         private void checkBox_filter_CheckedChanged(object sender, EventArgs e)
@@ -35,6 +36,7 @@ namespace Stocks
         {
             comboBox_csvList.Items.Clear();
             comboBox_csvList.SelectedText = string.Empty;
+            // comboBox_csvList_Changted(null, null);
             if (panel_filter.Enabled && !(radioButton_daily.Checked || radioButton_daily.Checked || radioButton_weekly.Checked || radioButton_monthly.Checked))
             {
                 comboBox_csvList.Enabled = false;
@@ -54,6 +56,11 @@ namespace Stocks
         private void button_load_Click(object sender, EventArgs e)
         {
             display.Show();
+        }
+
+        private void comboBox_csvList_Changted(object sender, EventArgs e)
+        {
+            button_load.Enabled = comboBox_csvList.SelectedItem != null;
         }
     }
 }

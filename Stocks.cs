@@ -40,6 +40,7 @@ namespace Stocks
                         double.Parse(csv.Length == 7 ? csv[5] : csv[4]))); // not necessary but maybe...
                 }
             }
+            Console.WriteLine($"Loaded {csvFiles.Length} .csv files in {folderPath}.");
         }
     }
 }
