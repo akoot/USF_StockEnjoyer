@@ -6,23 +6,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stocks
+namespace StocksEnjoyer
 {
-    internal class Stocks
+    internal class StocksEnjoyer
     {
-        public List<CandleStick> CandleStickList = new List<CandleStick>();
+
+        public string folderPath = "Stock Data"; // replace with your folder path
+
+        public List<CandleStick> CandleStickList;
         public List<string> CsvFileNames = new List<string>();
-        public Stocks() {
-            loadCandlesticks();
+
+        /// <summary>
+        /// The "chart" form instance
+        /// </summary>
+        public readonly ChartForm form_chart = new ChartForm();
+        public StocksEnjoyer() {
+            LoadCandlesticks();
             new HammerRecognizer().Recognize(CandleStickList);
         }
 
         /// <summary>
-        /// 
+        /// Loads all of the candlesticks into memory.
+        /// This looks inside of the "Stock Data" folder located where the program's executable is.
+        /// This function can be called any time during runtime to reload the list of CSV files.
         /// </summary>
-        void loadCandlesticks()
+        public void LoadCandlesticks()
         {
-            string folderPath = "Stock Data"; // replace with your folder path
+            // Create a new list for both candlesticks and csv file names.
+            CandleStickList = new List<CandleStick>();
+            CsvFileNames = new List<string>();
+
             var csvFiles = Directory.GetFiles(folderPath, "*.csv");
             foreach (string csvFile in csvFiles)
             {

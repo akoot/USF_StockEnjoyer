@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stocks.Recognizers
+namespace StocksEnjoyer.Recognizers
 {
     internal class InvertedHammerRecognizer : Recognizer
     {

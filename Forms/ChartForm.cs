@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stocks
+namespace StocksEnjoyer
 {
-    public partial class Display : Form
+    public partial class ChartForm : Form
     {
-        public Display()
+        public ChartForm()
         {
             InitializeComponent();
         }

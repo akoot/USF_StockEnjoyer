@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CBC7D98A-D6D4-4C66-9E23-4D804BBA829D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Stocks</RootNamespace>
-    <AssemblyName>Stocks</AssemblyName>
+    <RootNamespace>StocksEnjoyer</RootNamespace>
+    <AssemblyName>StocksEnjoyer 3.0</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>chart2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,27 +58,27 @@
     <Compile Include="Recognizers\InvertedHammerRecognizer.cs" />
     <Compile Include="Recognizers\GravestoneDojiRecognizer.cs" />
     <Compile Include="Recognizers\DragonflyDojiRecognizer.cs" />
-    <Compile Include="Stocks.cs" />
+    <Compile Include="StocksEnjoyer.cs" />
     <Compile Include="CandleStick.cs" />
     <Compile Include="Recognizers\HammerRecognizer.cs" />
     <Compile Include="Recognizers\DojiRecognizer.cs" />
     <Compile Include="Recognizers\Recognizer.cs" />
-    <Compile Include="Forms\Settings.cs">
+    <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
+    <Compile Include="Forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Display.cs">
+    <Compile Include="Forms\ChartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Display.Designer.cs">
-      <DependentUpon>Display.cs</DependentUpon>
+    <Compile Include="Forms\ChartForm.Designer.cs">
+      <DependentUpon>ChartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Display.resx">
-      <DependentUpon>Display.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ChartForm.resx">
+      <DependentUpon>ChartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,9 +88,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -101,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chart2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

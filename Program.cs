@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stocks
+namespace StocksEnjoyer
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Stocks
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Settings());
+            Application.Run(new SettingsForm());
         }
     }
 }
