@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StocksEnjoyer.Recognizers
 {
-    internal class TheHaramiRecognizer : Recognizer
+    internal class HaramiRecognizer : Recognizer
     {
         public override int[] Recognize(List<CandleStick> candleSticks)
         {

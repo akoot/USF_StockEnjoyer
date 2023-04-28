@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StocksEnjoyer.Recognizers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 // but at least this will run on a computer from 2002!!!!
 namespace StocksEnjoyer
 {
-    internal class StocksEnjoyer
+    public class StocksEnjoyer
     {
 
         public string folderPath = "Stock Data"; // replace with your folder path
@@ -19,13 +20,29 @@ namespace StocksEnjoyer
         public List<CandleStick> CandleStickList;
         public List<string> CsvFileNames = new List<string>();
 
+        public Dictionary<string, Recognizer> Recognizers = new Dictionary<string, Recognizer>();
+
         /// <summary>
         /// The "chart" form instance
         /// </summary>
-        public ChartForm form_chart = new ChartForm();
+        public ChartForm form_chart;
         public StocksEnjoyer() {
+            form_chart = new ChartForm(this);
             LoadCandlesticks();
-            new HammerRecognizer().Recognize(CandleStickList);
+            SetupRecognizers();
+        }
+
+        public void SetupRecognizers()
+        {
+            Recognizers["Doji"] = new DojiRecognizer();
+            Recognizers["Dragonfly"] = new DragonflyDojiRecognizer();
+            Recognizers["Evening Star"] = new EveningStartRecognizer();
+            Recognizers["Gravestone"] = new GravestoneDojiRecognizer();
+            Recognizers["Hammer"] = new HammerRecognizer();
+            Recognizers["Inverted Hammer"] = new InvertedHammerRecognizer();
+            Recognizers["Marobuzo"] = new MarobuzoRecognizer();
+            Recognizers["Spinning Top"] = new SpinningTopRecognizer();
+            Recognizers["Harami"] = new HaramiRecognizer();
         }
 
         /// <summary>

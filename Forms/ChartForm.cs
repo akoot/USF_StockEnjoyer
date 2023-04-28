@@ -12,9 +12,39 @@ namespace StocksEnjoyer
 {
     public partial class ChartForm : Form
     {
-        public ChartForm()
+        private StocksEnjoyer stocksEnjoyer;
+
+        public ChartForm(StocksEnjoyer stocksEnjoyer)
         {
+            this.stocksEnjoyer = stocksEnjoyer;
             InitializeComponent();
+            SetupPatternRecognizers();
+        }
+
+        private void SetupPatternRecognizers()
+        {
+        }
+
+        /// <summary>
+        /// Fired when the user changes the dateTimePicker value.
+        /// This will update the chart.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dateTimePicker_start_ValueChanged(object sender, EventArgs e)
+        {
+            //TODO: Update chart
+        }
+
+        /// <summary>
+        /// Fired when the user changes the dateTimePicker value.
+        /// This will update the chart.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dateTimePicker_end_ValueChanged(object sender, EventArgs e)
+        {
+            //TODO: Update chart
         }
     }
 }

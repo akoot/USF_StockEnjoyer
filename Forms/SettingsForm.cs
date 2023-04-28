@@ -93,7 +93,7 @@ namespace StocksEnjoyer
                 return;
             }
             // TODO: DataBind
-            if (stocksEnjoyer.form_chart.IsDisposed) stocksEnjoyer.form_chart = new ChartForm();
+            if (stocksEnjoyer.form_chart.IsDisposed) stocksEnjoyer.form_chart = new ChartForm(stocksEnjoyer);
             stocksEnjoyer.form_chart.Show();
         }
 

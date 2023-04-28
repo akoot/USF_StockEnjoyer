@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="Recognizers\EveningStartRecognizer.cs" />
     <Compile Include="Recognizers\MorningStarRecognizer.cs" />
-    <Compile Include="Recognizers\TheHaramiRecognizer.cs" />
+    <Compile Include="Recognizers\HaramiRecognizer.cs" />
     <Compile Include="Recognizers\SpinningTopRecognizer.cs" />
     <Compile Include="Recognizers\MarobuzoRecognizer.cs" />
     <Compile Include="Recognizers\InvertedHammerRecognizer.cs" />

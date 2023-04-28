@@ -14,7 +14,7 @@ namespace StocksEnjoyer
     /// As shown below, the CandleStick class has six properties, each corresponding to one of the values needed to represent a stock candlestick: date, open price, high price, low price, close price, and volume. These properties are all public and have both getter and setter methods.
     /// The constructor for the CandleStick class takes in six parameters: date, open, high, low, close, and volume.These values are used to initialize the corresponding properties of the class.
     /// </summary>
-    internal class CandleStick
+    public class CandleStick
     {
         public DateTime Date { get; set; }
         public double High { get; set; }

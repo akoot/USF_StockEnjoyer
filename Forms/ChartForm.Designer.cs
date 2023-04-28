@@ -72,7 +72,7 @@
             series1.Name = "Series1";
             series1.YValuesPerPoint = 4;
             this.chart_stock.Series.Add(series1);
-            this.chart_stock.Size = new System.Drawing.Size(1091, 548);
+            this.chart_stock.Size = new System.Drawing.Size(858, 548);
             this.chart_stock.TabIndex = 0;
             this.chart_stock.Text = "chart1";
             // 
@@ -90,8 +90,8 @@
             // splitContainer_main.Panel2
             // 
             this.splitContainer_main.Panel2.Controls.Add(this.splitContainer_settings);
-            this.splitContainer_main.Size = new System.Drawing.Size(1298, 548);
-            this.splitContainer_main.SplitterDistance = 1091;
+            this.splitContainer_main.Size = new System.Drawing.Size(1065, 548);
+            this.splitContainer_main.SplitterDistance = 858;
             this.splitContainer_main.TabIndex = 1;
             // 
             // splitContainer_settings
@@ -132,6 +132,7 @@
             this.dateTimePicker_start.ShowUpDown = true;
             this.dateTimePicker_start.Size = new System.Drawing.Size(175, 27);
             this.dateTimePicker_start.TabIndex = 4;
+            this.dateTimePicker_start.ValueChanged += new System.EventHandler(this.dateTimePicker_start_ValueChanged);
             // 
             // label_endDate
             // 
@@ -164,6 +165,7 @@
             this.dateTimePicker_end.ShowUpDown = true;
             this.dateTimePicker_end.Size = new System.Drawing.Size(176, 27);
             this.dateTimePicker_end.TabIndex = 6;
+            this.dateTimePicker_end.ValueChanged += new System.EventHandler(this.dateTimePicker_end_ValueChanged);
             // 
             // panel_patterns
             // 
@@ -205,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1298, 548);
+            this.ClientSize = new System.Drawing.Size(1065, 548);
             this.Controls.Add(this.splitContainer_main);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChartForm";
