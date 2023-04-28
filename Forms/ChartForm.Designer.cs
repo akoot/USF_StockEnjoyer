@@ -35,14 +35,14 @@
             this.chart_stock = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.splitContainer_main = new System.Windows.Forms.SplitContainer();
             this.splitContainer_settings = new System.Windows.Forms.SplitContainer();
+            this.panel_timePeriod = new System.Windows.Forms.Panel();
             this.label_timePeriod = new System.Windows.Forms.Label();
             this.dateTimePicker_start = new System.Windows.Forms.DateTimePicker();
             this.label_endDate = new System.Windows.Forms.Label();
             this.label_startDate = new System.Windows.Forms.Label();
             this.dateTimePicker_end = new System.Windows.Forms.DateTimePicker();
-            this.panel_patterns = new System.Windows.Forms.FlowLayoutPanel();
             this.label_patterns = new System.Windows.Forms.Label();
-            this.panel_timePeriod = new System.Windows.Forms.Panel();
+            this.panel_patterns = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.chart_stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_main)).BeginInit();
             this.splitContainer_main.Panel1.SuspendLayout();
@@ -113,6 +113,20 @@
             this.splitContainer_settings.SplitterDistance = 174;
             this.splitContainer_settings.TabIndex = 11;
             // 
+            // panel_timePeriod
+            // 
+            this.panel_timePeriod.Controls.Add(this.label_timePeriod);
+            this.panel_timePeriod.Controls.Add(this.dateTimePicker_start);
+            this.panel_timePeriod.Controls.Add(this.label_endDate);
+            this.panel_timePeriod.Controls.Add(this.label_startDate);
+            this.panel_timePeriod.Controls.Add(this.dateTimePicker_end);
+            this.panel_timePeriod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_timePeriod.Location = new System.Drawing.Point(0, 0);
+            this.panel_timePeriod.Name = "panel_timePeriod";
+            this.panel_timePeriod.Padding = new System.Windows.Forms.Padding(10);
+            this.panel_timePeriod.Size = new System.Drawing.Size(203, 174);
+            this.panel_timePeriod.TabIndex = 9;
+            // 
             // label_timePeriod
             // 
             this.label_timePeriod.AutoSize = true;
@@ -167,16 +181,6 @@
             this.dateTimePicker_end.TabIndex = 6;
             this.dateTimePicker_end.ValueChanged += new System.EventHandler(this.dateTimePicker_end_ValueChanged);
             // 
-            // panel_patterns
-            // 
-            this.panel_patterns.AutoScroll = true;
-            this.panel_patterns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_patterns.Location = new System.Drawing.Point(0, 0);
-            this.panel_patterns.Name = "panel_patterns";
-            this.panel_patterns.Padding = new System.Windows.Forms.Padding(10, 40, 10, 10);
-            this.panel_patterns.Size = new System.Drawing.Size(203, 370);
-            this.panel_patterns.TabIndex = 0;
-            // 
             // label_patterns
             // 
             this.label_patterns.AutoSize = true;
@@ -189,19 +193,15 @@
             this.label_patterns.TabIndex = 8;
             this.label_patterns.Text = "Patterns";
             // 
-            // panel_timePeriod
+            // panel_patterns
             // 
-            this.panel_timePeriod.Controls.Add(this.label_timePeriod);
-            this.panel_timePeriod.Controls.Add(this.dateTimePicker_start);
-            this.panel_timePeriod.Controls.Add(this.label_endDate);
-            this.panel_timePeriod.Controls.Add(this.label_startDate);
-            this.panel_timePeriod.Controls.Add(this.dateTimePicker_end);
-            this.panel_timePeriod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_timePeriod.Location = new System.Drawing.Point(0, 0);
-            this.panel_timePeriod.Name = "panel_timePeriod";
-            this.panel_timePeriod.Padding = new System.Windows.Forms.Padding(10);
-            this.panel_timePeriod.Size = new System.Drawing.Size(203, 174);
-            this.panel_timePeriod.TabIndex = 9;
+            this.panel_patterns.AutoScroll = true;
+            this.panel_patterns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_patterns.Location = new System.Drawing.Point(0, 0);
+            this.panel_patterns.Name = "panel_patterns";
+            this.panel_patterns.Padding = new System.Windows.Forms.Padding(10, 40, 10, 10);
+            this.panel_patterns.Size = new System.Drawing.Size(203, 370);
+            this.panel_patterns.TabIndex = 0;
             // 
             // ChartForm
             // 

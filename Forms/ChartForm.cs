@@ -35,6 +35,12 @@ namespace StocksEnjoyer
             }
         }
 
+        /// <summary>
+        /// Fired when any of the pattern checkboxes are checked or unchecked.
+        /// This will update the chart to display these patterns.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PatternCheckedEvent(object sender, EventArgs e)
         {
             var checkbox = (CheckBox) sender;

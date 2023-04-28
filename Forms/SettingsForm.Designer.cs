@@ -39,7 +39,7 @@
             this.button_load = new System.Windows.Forms.Button();
             this.comboBox_csvList = new System.Windows.Forms.ComboBox();
             this.button_reload = new System.Windows.Forms.Button();
-            this.toolTip_reload = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip_settings = new System.Windows.Forms.ToolTip(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.panel_filter.SuspendLayout();
             this.SuspendLayout();
@@ -149,6 +149,7 @@
             this.button_load.Size = new System.Drawing.Size(476, 51);
             this.button_load.TabIndex = 8;
             this.button_load.Text = "Show Chart";
+            this.toolTip_settings.SetToolTip(this.button_load, "Open the chart window");
             this.button_load.UseVisualStyleBackColor = false;
             this.button_load.Click += new System.EventHandler(this.button_load_Click);
             // 
@@ -163,6 +164,7 @@
             this.comboBox_csvList.Name = "comboBox_csvList";
             this.comboBox_csvList.Size = new System.Drawing.Size(339, 30);
             this.comboBox_csvList.TabIndex = 0;
+            this.toolTip_settings.SetToolTip(this.comboBox_csvList, "Select a CSV file");
             this.comboBox_csvList.SelectedIndexChanged += new System.EventHandler(this.comboBox_csvList_Changed);
             // 
             // button_reload
@@ -186,7 +188,7 @@
             this.button_reload.TabIndex = 10;
             this.button_reload.Text = "Reload Folder";
             this.button_reload.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.toolTip_reload.SetToolTip(this.button_reload, "Reload Stock Data");
+            this.toolTip_settings.SetToolTip(this.button_reload, "Reload \"Stock Data\" folder");
             this.button_reload.UseVisualStyleBackColor = false;
             this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
             // 
@@ -237,7 +239,7 @@
         private System.Windows.Forms.Button button_load;
         private System.Windows.Forms.ComboBox comboBox_csvList;
         private System.Windows.Forms.Button button_reload;
-        private System.Windows.Forms.ToolTip toolTip_reload;
+        private System.Windows.Forms.ToolTip toolTip_settings;
         private System.Windows.Forms.Label label2;
     }
 }
