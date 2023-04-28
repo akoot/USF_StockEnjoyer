@@ -87,7 +87,18 @@ namespace StocksEnjoyer
         /// <param name="e"></param>
         private void button_load_Click(object sender, EventArgs e)
         {
+            if (!IsSelectedCsvFileValid())
+            {
+                MessageBox.Show("Invalid CSV file specified!");
+                return;
+            }
+            // TODO: DataBind
             stocksEnjoyer.form_chart.Show();
+        }
+
+        private bool IsSelectedCsvFileValid()
+        {
+            return stocksEnjoyer.CsvFileNames.Contains(comboBox_csvList.Text);
         }
 
         /// <summary>
@@ -98,7 +109,7 @@ namespace StocksEnjoyer
         /// <param name="e"></param>
         private void comboBox_csvList_Changed(object sender, EventArgs e)
         {
-            button_load.Enabled = comboBox_csvList.SelectedItem != null;
+            button_load.Enabled = IsSelectedCsvFileValid();
         }
 
         /// <summary>
