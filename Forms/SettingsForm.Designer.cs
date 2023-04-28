@@ -155,6 +155,7 @@
             // comboBox_csvList
             // 
             this.comboBox_csvList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox_csvList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_csvList.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox_csvList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_csvList.FormattingEnabled = true;

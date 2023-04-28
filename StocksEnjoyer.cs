@@ -22,7 +22,7 @@ namespace StocksEnjoyer
         /// <summary>
         /// The "chart" form instance
         /// </summary>
-        public readonly ChartForm form_chart = new ChartForm();
+        public ChartForm form_chart = new ChartForm();
         public StocksEnjoyer() {
             LoadCandlesticks();
             new HammerRecognizer().Recognize(CandleStickList);
