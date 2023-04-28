@@ -51,7 +51,7 @@
             this.checkBox_filter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
             this.checkBox_filter.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_filter.Location = new System.Drawing.Point(39, 188);
+            this.checkBox_filter.Location = new System.Drawing.Point(37, 77);
             this.checkBox_filter.Name = "checkBox_filter";
             this.checkBox_filter.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.checkBox_filter.Size = new System.Drawing.Size(186, 33);
@@ -69,7 +69,7 @@
             this.panel_filter.Controls.Add(this.radioButton_weekly);
             this.panel_filter.Controls.Add(this.radioButton_monthly);
             this.panel_filter.Enabled = false;
-            this.panel_filter.Location = new System.Drawing.Point(231, 188);
+            this.panel_filter.Location = new System.Drawing.Point(229, 77);
             this.panel_filter.Name = "panel_filter";
             this.panel_filter.Size = new System.Drawing.Size(287, 33);
             this.panel_filter.TabIndex = 7;
@@ -122,11 +122,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(35, 27);
+            this.label1.Location = new System.Drawing.Point(33, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 22);
+            this.label1.Size = new System.Drawing.Size(86, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CSV file";
+            this.label1.Text = "CSV File:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button_load
@@ -143,7 +143,7 @@
             this.button_load.ForeColor = System.Drawing.Color.White;
             this.button_load.Image = ((System.Drawing.Image)(resources.GetObject("button_load.Image")));
             this.button_load.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_load.Location = new System.Drawing.Point(39, 88);
+            this.button_load.Location = new System.Drawing.Point(37, 198);
             this.button_load.Name = "button_load";
             this.button_load.Padding = new System.Windows.Forms.Padding(10);
             this.button_load.Size = new System.Drawing.Size(476, 51);
@@ -158,7 +158,7 @@
             this.comboBox_csvList.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox_csvList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_csvList.FormattingEnabled = true;
-            this.comboBox_csvList.Location = new System.Drawing.Point(39, 52);
+            this.comboBox_csvList.Location = new System.Drawing.Point(37, 162);
             this.comboBox_csvList.Name = "comboBox_csvList";
             this.comboBox_csvList.Size = new System.Drawing.Size(339, 30);
             this.comboBox_csvList.TabIndex = 0;
@@ -178,7 +178,7 @@
             this.button_reload.ForeColor = System.Drawing.Color.White;
             this.button_reload.Image = ((System.Drawing.Image)(resources.GetObject("button_reload.Image")));
             this.button_reload.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_reload.Location = new System.Drawing.Point(384, 52);
+            this.button_reload.Location = new System.Drawing.Point(382, 162);
             this.button_reload.Name = "button_reload";
             this.button_reload.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button_reload.Size = new System.Drawing.Size(131, 30);
@@ -195,7 +195,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(35, 163);
+            this.label2.Location = new System.Drawing.Point(33, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 22);
             this.label2.TabIndex = 11;
@@ -207,7 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(554, 261);
+            this.ClientSize = new System.Drawing.Size(554, 305);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button_load);
             this.Controls.Add(this.checkBox_filter);
