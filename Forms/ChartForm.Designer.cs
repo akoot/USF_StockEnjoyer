@@ -32,202 +32,213 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChartForm));
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.chart_stock = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.splitContainer_main = new System.Windows.Forms.SplitContainer();
+            this.splitContainer_settings = new System.Windows.Forms.SplitContainer();
+            this.label_timePeriod = new System.Windows.Forms.Label();
+            this.dateTimePicker_start = new System.Windows.Forms.DateTimePicker();
+            this.label_endDate = new System.Windows.Forms.Label();
+            this.label_startDate = new System.Windows.Forms.Label();
+            this.dateTimePicker_end = new System.Windows.Forms.DateTimePicker();
+            this.panel_patterns = new System.Windows.Forms.FlowLayoutPanel();
+            this.label_patterns = new System.Windows.Forms.Label();
+            this.panel_timePeriod = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_stock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer_main)).BeginInit();
+            this.splitContainer_main.Panel1.SuspendLayout();
+            this.splitContainer_main.Panel2.SuspendLayout();
+            this.splitContainer_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer_settings)).BeginInit();
+            this.splitContainer_settings.Panel1.SuspendLayout();
+            this.splitContainer_settings.Panel2.SuspendLayout();
+            this.splitContainer_settings.SuspendLayout();
+            this.panel_patterns.SuspendLayout();
+            this.panel_timePeriod.SuspendLayout();
             this.SuspendLayout();
             // 
-            // chart1
+            // chart_stock
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart_stock.ChartAreas.Add(chartArea1);
+            this.chart_stock.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.chart_stock.Legends.Add(legend1);
+            this.chart_stock.Location = new System.Drawing.Point(0, 0);
+            this.chart_stock.Name = "chart_stock";
+            this.chart_stock.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Candlestick;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             series1.YValuesPerPoint = 4;
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(842, 464);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.chart_stock.Series.Add(series1);
+            this.chart_stock.Size = new System.Drawing.Size(1091, 548);
+            this.chart_stock.TabIndex = 0;
+            this.chart_stock.Text = "chart1";
             // 
-            // splitContainer1
+            // splitContainer_main
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer_main.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer_main.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer_main.Name = "splitContainer_main";
             // 
-            // splitContainer1.Panel1
+            // splitContainer_main.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.chart1);
+            this.splitContainer_main.Panel1.Controls.Add(this.chart_stock);
             // 
-            // splitContainer1.Panel2
+            // splitContainer_main.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1098, 464);
-            this.splitContainer1.SplitterDistance = 842;
-            this.splitContainer1.TabIndex = 1;
+            this.splitContainer_main.Panel2.Controls.Add(this.splitContainer_settings);
+            this.splitContainer_main.Size = new System.Drawing.Size(1298, 548);
+            this.splitContainer_main.SplitterDistance = 1091;
+            this.splitContainer_main.TabIndex = 1;
             // 
-            // splitContainer2
+            // splitContainer_settings
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer_settings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer_settings.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer_settings.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer_settings.Name = "splitContainer_settings";
+            this.splitContainer_settings.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer2.Panel1
+            // splitContainer_settings.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.panel1);
+            this.splitContainer_settings.Panel1.Controls.Add(this.panel_timePeriod);
             // 
-            // splitContainer2.Panel2
+            // splitContainer_settings.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer2.Size = new System.Drawing.Size(252, 464);
-            this.splitContainer2.SplitterDistance = 232;
-            this.splitContainer2.TabIndex = 11;
+            this.splitContainer_settings.Panel2.Controls.Add(this.panel_patterns);
+            this.splitContainer_settings.Size = new System.Drawing.Size(203, 548);
+            this.splitContainer_settings.SplitterDistance = 174;
+            this.splitContainer_settings.TabIndex = 11;
             // 
-            // panel1
+            // label_timePeriod
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(252, 232);
-            this.panel1.TabIndex = 9;
+            this.label_timePeriod.AutoSize = true;
+            this.label_timePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_timePeriod.Location = new System.Drawing.Point(13, 10);
+            this.label_timePeriod.Name = "label_timePeriod";
+            this.label_timePeriod.Size = new System.Drawing.Size(118, 22);
+            this.label_timePeriod.TabIndex = 1;
+            this.label_timePeriod.Text = "Time Period";
             // 
-            // label1
+            // dateTimePicker_start
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Time Period";
+            this.dateTimePicker_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_start.Location = new System.Drawing.Point(17, 74);
+            this.dateTimePicker_start.Name = "dateTimePicker_start";
+            this.dateTimePicker_start.ShowUpDown = true;
+            this.dateTimePicker_start.Size = new System.Drawing.Size(175, 27);
+            this.dateTimePicker_start.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // label_endDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 64);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(224, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.label_endDate.AutoSize = true;
+            this.label_endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_endDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_endDate.Location = new System.Drawing.Point(13, 104);
+            this.label_endDate.Name = "label_endDate";
+            this.label_endDate.Size = new System.Drawing.Size(85, 22);
+            this.label_endDate.TabIndex = 7;
+            this.label_endDate.Text = "End Date";
             // 
-            // label4
+            // label_startDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(11, 87);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 22);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "End Date";
+            this.label_startDate.AutoSize = true;
+            this.label_startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_startDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_startDate.Location = new System.Drawing.Point(13, 49);
+            this.label_startDate.Name = "label_startDate";
+            this.label_startDate.Size = new System.Drawing.Size(91, 22);
+            this.label_startDate.TabIndex = 5;
+            this.label_startDate.Text = "Start Date";
             // 
-            // label3
+            // dateTimePicker_end
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(12, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Start Date";
+            this.dateTimePicker_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_end.Location = new System.Drawing.Point(17, 129);
+            this.dateTimePicker_end.Name = "dateTimePicker_end";
+            this.dateTimePicker_end.ShowUpDown = true;
+            this.dateTimePicker_end.Size = new System.Drawing.Size(176, 27);
+            this.dateTimePicker_end.TabIndex = 6;
             // 
-            // dateTimePicker2
+            // panel_patterns
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(15, 112);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(225, 20);
-            this.dateTimePicker2.TabIndex = 6;
+            this.panel_patterns.AutoScroll = true;
+            this.panel_patterns.Controls.Add(this.label_patterns);
+            this.panel_patterns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_patterns.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panel_patterns.Location = new System.Drawing.Point(0, 0);
+            this.panel_patterns.Name = "panel_patterns";
+            this.panel_patterns.Padding = new System.Windows.Forms.Padding(10);
+            this.panel_patterns.Size = new System.Drawing.Size(203, 370);
+            this.panel_patterns.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // label_patterns
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(252, 228);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.label_patterns.AutoSize = true;
+            this.label_patterns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_patterns.Location = new System.Drawing.Point(13, 10);
+            this.label_patterns.Name = "label_patterns";
+            this.label_patterns.Size = new System.Drawing.Size(85, 22);
+            this.label_patterns.TabIndex = 8;
+            this.label_patterns.Text = "Patterns";
             // 
-            // label2
+            // panel_timePeriod
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 22);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Patterns";
+            this.panel_timePeriod.Controls.Add(this.label_timePeriod);
+            this.panel_timePeriod.Controls.Add(this.dateTimePicker_start);
+            this.panel_timePeriod.Controls.Add(this.label_endDate);
+            this.panel_timePeriod.Controls.Add(this.label_startDate);
+            this.panel_timePeriod.Controls.Add(this.dateTimePicker_end);
+            this.panel_timePeriod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_timePeriod.Location = new System.Drawing.Point(0, 0);
+            this.panel_timePeriod.Name = "panel_timePeriod";
+            this.panel_timePeriod.Padding = new System.Windows.Forms.Padding(10);
+            this.panel_timePeriod.Size = new System.Drawing.Size(203, 174);
+            this.panel_timePeriod.TabIndex = 9;
             // 
             // ChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 464);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(1298, 548);
+            this.Controls.Add(this.splitContainer_main);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChartForm";
             this.Text = "StocksEnjoyer 3.0 - Chart";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_stock)).EndInit();
+            this.splitContainer_main.Panel1.ResumeLayout(false);
+            this.splitContainer_main.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer_main)).EndInit();
+            this.splitContainer_main.ResumeLayout(false);
+            this.splitContainer_settings.Panel1.ResumeLayout(false);
+            this.splitContainer_settings.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer_settings)).EndInit();
+            this.splitContainer_settings.ResumeLayout(false);
+            this.panel_patterns.ResumeLayout(false);
+            this.panel_patterns.PerformLayout();
+            this.panel_timePeriod.ResumeLayout(false);
+            this.panel_timePeriod.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_stock;
+        private System.Windows.Forms.SplitContainer splitContainer_main;
+        private System.Windows.Forms.Label label_timePeriod;
+        private System.Windows.Forms.Label label_endDate;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_end;
+        private System.Windows.Forms.Label label_startDate;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_start;
+        private System.Windows.Forms.SplitContainer splitContainer_settings;
+        private System.Windows.Forms.FlowLayoutPanel panel_patterns;
+        private System.Windows.Forms.Label label_patterns;
+        private System.Windows.Forms.Panel panel_timePeriod;
     }
 }
