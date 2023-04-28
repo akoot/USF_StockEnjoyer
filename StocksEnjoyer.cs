@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// if i wasn't limited to .net windows forms this would actually look good
+// i refuse to programatically set the "paint" of a button and whatnot or whatever
+// but at least this will run on a computer from 2002!!!!
 namespace StocksEnjoyer
 {
     internal class StocksEnjoyer
