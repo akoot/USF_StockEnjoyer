@@ -52,7 +52,6 @@
             this.splitContainer_settings.Panel1.SuspendLayout();
             this.splitContainer_settings.Panel2.SuspendLayout();
             this.splitContainer_settings.SuspendLayout();
-            this.panel_patterns.SuspendLayout();
             this.panel_timePeriod.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,6 +107,7 @@
             // 
             // splitContainer_settings.Panel2
             // 
+            this.splitContainer_settings.Panel2.Controls.Add(this.label_patterns);
             this.splitContainer_settings.Panel2.Controls.Add(this.panel_patterns);
             this.splitContainer_settings.Size = new System.Drawing.Size(203, 548);
             this.splitContainer_settings.SplitterDistance = 174;
@@ -137,22 +137,22 @@
             // label_endDate
             // 
             this.label_endDate.AutoSize = true;
-            this.label_endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_endDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label_endDate.Location = new System.Drawing.Point(13, 104);
             this.label_endDate.Name = "label_endDate";
-            this.label_endDate.Size = new System.Drawing.Size(85, 22);
+            this.label_endDate.Size = new System.Drawing.Size(79, 20);
             this.label_endDate.TabIndex = 7;
             this.label_endDate.Text = "End Date";
             // 
             // label_startDate
             // 
             this.label_startDate.AutoSize = true;
-            this.label_startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_startDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label_startDate.Location = new System.Drawing.Point(13, 49);
             this.label_startDate.Name = "label_startDate";
-            this.label_startDate.Size = new System.Drawing.Size(91, 22);
+            this.label_startDate.Size = new System.Drawing.Size(86, 20);
             this.label_startDate.TabIndex = 5;
             this.label_startDate.Text = "Start Date";
             // 
@@ -170,21 +170,22 @@
             // panel_patterns
             // 
             this.panel_patterns.AutoScroll = true;
-            this.panel_patterns.Controls.Add(this.label_patterns);
             this.panel_patterns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_patterns.Location = new System.Drawing.Point(0, 0);
             this.panel_patterns.Name = "panel_patterns";
-            this.panel_patterns.Padding = new System.Windows.Forms.Padding(10);
+            this.panel_patterns.Padding = new System.Windows.Forms.Padding(10, 40, 10, 10);
             this.panel_patterns.Size = new System.Drawing.Size(203, 370);
             this.panel_patterns.TabIndex = 0;
             // 
             // label_patterns
             // 
             this.label_patterns.AutoSize = true;
+            this.label_patterns.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_patterns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_patterns.Location = new System.Drawing.Point(13, 10);
+            this.label_patterns.Location = new System.Drawing.Point(0, 0);
             this.label_patterns.Name = "label_patterns";
-            this.label_patterns.Size = new System.Drawing.Size(85, 22);
+            this.label_patterns.Padding = new System.Windows.Forms.Padding(10);
+            this.label_patterns.Size = new System.Drawing.Size(105, 42);
             this.label_patterns.TabIndex = 8;
             this.label_patterns.Text = "Patterns";
             // 
@@ -218,10 +219,9 @@
             this.splitContainer_main.ResumeLayout(false);
             this.splitContainer_settings.Panel1.ResumeLayout(false);
             this.splitContainer_settings.Panel2.ResumeLayout(false);
+            this.splitContainer_settings.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_settings)).EndInit();
             this.splitContainer_settings.ResumeLayout(false);
-            this.panel_patterns.ResumeLayout(false);
-            this.panel_patterns.PerformLayout();
             this.panel_timePeriod.ResumeLayout(false);
             this.panel_timePeriod.PerformLayout();
             this.ResumeLayout(false);

@@ -28,8 +28,10 @@ namespace StocksEnjoyer
             {
                 var checkbox = new CheckBox();
                 checkbox.Text = recognizer;
+                checkbox.Font = new Font("Microsoft Sans", 11);
                 // checkbox.FlatStyle = FlatStyle.System;
                 panel_patterns.Controls.Add(checkbox);
+                checkbox.CheckedChanged += new EventHandler(PatternCheckedEvent);
             }
         }
 

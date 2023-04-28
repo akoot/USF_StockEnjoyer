@@ -95,6 +95,7 @@ namespace StocksEnjoyer
             // TODO: DataBind
             if (stocksEnjoyer.form_chart.IsDisposed) stocksEnjoyer.form_chart = new ChartForm(stocksEnjoyer);
             stocksEnjoyer.form_chart.Show();
+            stocksEnjoyer.form_chart.Focus();
         }
 
         private bool IsSelectedCsvFileValid()
