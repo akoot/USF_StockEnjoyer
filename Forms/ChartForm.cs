@@ -23,6 +23,21 @@ namespace StocksEnjoyer
 
         private void SetupPatternRecognizers()
         {
+            Console.WriteLine($"Loaded {stocksEnjoyer.Recognizers.Count} pattern recognizers.");
+            foreach (string recognizer in stocksEnjoyer.Recognizers.Keys)
+            {
+                var checkbox = new CheckBox();
+                checkbox.Text = recognizer;
+                // checkbox.FlatStyle = FlatStyle.System;
+                panel_patterns.Controls.Add(checkbox);
+            }
+        }
+
+        private void PatternCheckedEvent(object sender, EventArgs e)
+        {
+            var checkbox = (CheckBox) sender;
+            var enabled = checkbox.Checked;
+            Console.WriteLine($"{checkbox.Text}: {enabled}");
         }
 
         /// <summary>

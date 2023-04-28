@@ -125,12 +125,12 @@
             // 
             // dateTimePicker_start
             // 
-            this.dateTimePicker_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_start.Location = new System.Drawing.Point(17, 74);
             this.dateTimePicker_start.Name = "dateTimePicker_start";
             this.dateTimePicker_start.ShowUpDown = true;
-            this.dateTimePicker_start.Size = new System.Drawing.Size(175, 27);
+            this.dateTimePicker_start.Size = new System.Drawing.Size(175, 26);
             this.dateTimePicker_start.TabIndex = 4;
             this.dateTimePicker_start.ValueChanged += new System.EventHandler(this.dateTimePicker_start_ValueChanged);
             // 
@@ -158,12 +158,12 @@
             // 
             // dateTimePicker_end
             // 
-            this.dateTimePicker_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_end.Location = new System.Drawing.Point(17, 129);
             this.dateTimePicker_end.Name = "dateTimePicker_end";
             this.dateTimePicker_end.ShowUpDown = true;
-            this.dateTimePicker_end.Size = new System.Drawing.Size(176, 27);
+            this.dateTimePicker_end.Size = new System.Drawing.Size(176, 26);
             this.dateTimePicker_end.TabIndex = 6;
             this.dateTimePicker_end.ValueChanged += new System.EventHandler(this.dateTimePicker_end_ValueChanged);
             // 
@@ -172,7 +172,6 @@
             this.panel_patterns.AutoScroll = true;
             this.panel_patterns.Controls.Add(this.label_patterns);
             this.panel_patterns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_patterns.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panel_patterns.Location = new System.Drawing.Point(0, 0);
             this.panel_patterns.Name = "panel_patterns";
             this.panel_patterns.Padding = new System.Windows.Forms.Padding(10);

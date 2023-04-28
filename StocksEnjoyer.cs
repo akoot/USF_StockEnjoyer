@@ -27,9 +27,9 @@ namespace StocksEnjoyer
         /// </summary>
         public ChartForm form_chart;
         public StocksEnjoyer() {
-            form_chart = new ChartForm(this);
             LoadCandlesticks();
             SetupRecognizers();
+            form_chart = new ChartForm(this);
         }
 
         public void SetupRecognizers()
