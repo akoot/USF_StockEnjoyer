@@ -70,7 +70,9 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Candlestick;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             series1.YValuesPerPoint = 4;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart_stock.Series.Add(series1);
             this.chart_stock.Size = new System.Drawing.Size(858, 548);
             this.chart_stock.TabIndex = 0;

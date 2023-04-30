@@ -62,8 +62,19 @@ namespace StocksEnjoyer
 
         private void UpdateChartData()
         {
-            chart_stock.DataSource = GetCandleSticks(dateTimePicker_start.Value, dateTimePicker_end.Value);
-            chart_stock.DataBind();
+            //chart_stock.DataSource = GetCandleSticks(dateTimePicker_start.Value, dateTimePicker_end.Value);
+            //chart_stock.DataBind();
+            chart_stock.Series[0].Points.Clear();
+            foreach (CandleStick candlestick in GetCandleSticks(dateTimePicker_start.Value, dateTimePicker_end.Value))
+            {
+                chart_stock.Series[0].Points.AddXY(
+                    candlestick.Date,
+                    candlestick.Low,
+                    candlestick.High,
+                    candlestick.Close,
+                    candlestick.Open
+                );
+            }
         }
 
         private List<CandleStick> GetCandleSticks(DateTime from, DateTime to)
