@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StocksEnjoyer.Recognizers
 {
     internal class InvertedHammerRecognizer : PatternRecognizer
     {
-        public override int[] Recognize(List<CandleStick> candleSticks)
+        public override void Draw(Chart chart)
         {
             throw new NotImplementedException();
         }

@@ -15,12 +15,14 @@ namespace StocksEnjoyer
     {
         private StocksEnjoyerMain stocksEnjoyer;
         private string SelectedCSVFile;
+        private List<String> selectedPatterns;
 
         public ChartForm(StocksEnjoyerMain stocksEnjoyer)
         {
             this.stocksEnjoyer = stocksEnjoyer;
             InitializeComponent();
             SetupPatternRecognizers();
+            selectedPatterns = new List<String>();
         }
 
         private void SetupPatternRecognizers()
@@ -47,7 +49,16 @@ namespace StocksEnjoyer
         {
             var checkbox = (CheckBox) sender;
             var enabled = checkbox.Checked;
-            Console.WriteLine($"{checkbox.Text}: {enabled}");
+
+            if (enabled) selectedPatterns.Add(checkbox.Text);
+            else selectedPatterns.Remove(checkbox.Text);
+
+            if (enabled)
+            {
+                stocksEnjoyer.PatternRecognizers[checkbox.Text].Draw(chart_stock);
+                //Console.WriteLine($"{checkbox.Text} pattern indices: {string.Join(", ",patterns)}");
+            }
+            //Console.WriteLine($"{checkbox.Text}: {enabled}");
         }
 
         /// <summary>

@@ -35,6 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChartForm));
             this.chart_stock = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.candleStickBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer_main = new System.Windows.Forms.SplitContainer();
             this.splitContainer_settings = new System.Windows.Forms.SplitContainer();
             this.panel_timePeriod = new System.Windows.Forms.Panel();
@@ -45,8 +46,8 @@
             this.dateTimePicker_end = new System.Windows.Forms.DateTimePicker();
             this.label_patterns = new System.Windows.Forms.Label();
             this.panel_patterns = new System.Windows.Forms.FlowLayoutPanel();
-            this.candleStickBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chart_stock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.candleStickBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_main)).BeginInit();
             this.splitContainer_main.Panel1.SuspendLayout();
             this.splitContainer_main.Panel2.SuspendLayout();
@@ -56,7 +57,6 @@
             this.splitContainer_settings.Panel2.SuspendLayout();
             this.splitContainer_settings.SuspendLayout();
             this.panel_timePeriod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.candleStickBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chart_stock
@@ -84,6 +84,10 @@
             this.chart_stock.Text = "Stonks";
             title1.Name = "Title1";
             this.chart_stock.Titles.Add(title1);
+            // 
+            // candleStickBindingSource
+            // 
+            this.candleStickBindingSource.DataSource = typeof(StocksEnjoyer.CandleStick);
             // 
             // splitContainer_main
             // 
@@ -213,10 +217,6 @@
             this.panel_patterns.Size = new System.Drawing.Size(203, 370);
             this.panel_patterns.TabIndex = 0;
             // 
-            // candleStickBindingSource
-            // 
-            this.candleStickBindingSource.DataSource = typeof(StocksEnjoyer.CandleStick);
-            // 
             // ChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +227,7 @@
             this.Name = "ChartForm";
             this.Text = "StocksEnjoyer 3.0 - Chart";
             ((System.ComponentModel.ISupportInitialize)(this.chart_stock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.candleStickBindingSource)).EndInit();
             this.splitContainer_main.Panel1.ResumeLayout(false);
             this.splitContainer_main.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_main)).EndInit();
@@ -238,7 +239,6 @@
             this.splitContainer_settings.ResumeLayout(false);
             this.panel_timePeriod.ResumeLayout(false);
             this.panel_timePeriod.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.candleStickBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

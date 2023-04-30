@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StocksEnjoyer
 {
     internal class HammerRecognizer : PatternRecognizer
     {
-        public override int[] Recognize(List<CandleStick> candleSticks)
+        public override void Draw(Chart chart)
         {
-            MessageBox.Show("This hammer is now RECOGNIZED");
-            return new int[0];
+            throw new NotImplementedException();
         }
     }
 }
