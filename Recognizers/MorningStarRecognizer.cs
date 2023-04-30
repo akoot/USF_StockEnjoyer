@@ -6,6 +6,14 @@ namespace StocksEnjoyer.Recognizers
 {
     internal class MorningStarRecognizer : PatternRecognizer
     {
+        /// <summary>
+        ///     Note that this function assumes that a morning star pattern consists of a long bearish candle followed by a small
+        ///     candlestick that opens lower but closes higher than the previous candle, and then a long bullish candle that closes
+        ///     above the middle of the first candle. You can adjust the thresholds for what constitutes a long or small candle by
+        ///     changing the comparison operators in the isMorningStar calculation. Also, this function assumes that the input list
+        ///     of candles is sorted by date in ascending order.
+        /// </summary>
+        /// <param name="chart"></param>
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.DarkCyan, "Morning Star");

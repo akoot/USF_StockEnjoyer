@@ -6,6 +6,13 @@ namespace StocksEnjoyer
 {
     internal class HammerRecognizer : PatternRecognizer
     {
+        /// <summary>
+        ///     Note that this function assumes that a hammer candle is defined as a candlestick with a small body located at the
+        ///     upper end of the candle, with a lower shadow at least twice the size of the body, and little to no upper shadow.
+        ///     You can adjust the threshold for what constitutes a small body by changing the value 1/3 in the isHammer
+        ///     calculation. Also, this function assumes that the input list of candles is sorted by date in ascending order.
+        /// </summary>
+        /// <param name="chart"></param>
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.LightGreen, "Hammer");

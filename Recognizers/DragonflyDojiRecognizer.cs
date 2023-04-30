@@ -7,6 +7,13 @@ namespace StocksEnjoyer
 {
     internal class DragonflyDojiRecognizer : PatternRecognizer
     {
+        /// <summary>
+        ///     Note that this function assumes that a dragonfly doji is defined as a candlestick with an open equal to the low and
+        ///     a close equal to the high, with a body that is less than 1% of the candle's high. You can adjust this threshold by
+        ///     changing the value 0.01 in the isDragonflyDoji calculation. Also, this function assumes that the input list of
+        ///     candles is sorted by date in ascending order.
+        /// </summary>
+        /// <param name="chart"></param>
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.Orange, "Dragonfly Doji");

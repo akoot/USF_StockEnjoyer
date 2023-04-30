@@ -6,6 +6,14 @@ namespace StocksEnjoyer.Recognizers
 {
     internal class EveningStartRecognizer : PatternRecognizer
     {
+        /// <summary>
+        ///     Note that this function assumes that an evening star pattern consists of a long bullish candle followed by a small
+        ///     candlestick that opens higher but closes lower than the previous candle, and then a long bearish candle that closes
+        ///     below the middle of the first candle. You can adjust the thresholds for what constitutes a long or small candle by
+        ///     changing the comparison operators in the isEveningStar calculation. Also, this function assumes that the input list
+        ///     of candles is sorted by date in ascending order.
+        /// </summary>
+        /// <param name="chart"></param>
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.Orchid, "Evening Star");

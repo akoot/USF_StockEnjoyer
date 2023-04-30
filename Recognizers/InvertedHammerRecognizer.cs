@@ -6,6 +6,14 @@ namespace StocksEnjoyer.Recognizers
 {
     internal class InvertedHammerRecognizer : PatternRecognizer
     {
+        /// <summary>
+        ///     Note that this function assumes that an inverted hammer candle is defined as a candlestick with a small body
+        ///     located at the lower end of the candle, with an upper shadow at least twice the size of the body, and little to no
+        ///     lower shadow. You can adjust the threshold for what constitutes a small body by changing the value 1/3 in the
+        ///     isInvertedHammer calculation. Also, this function assumes that the input list of candles is sorted by date in
+        ///     ascending order.
+        /// </summary>
+        /// <param name="chart"></param>
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.Sienna, "Inverted Hammer");

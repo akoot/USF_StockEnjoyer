@@ -7,6 +7,13 @@ namespace StocksEnjoyer
 {
     internal class GravestoneDojiRecognizer : PatternRecognizer
     {
+        /// <summary>
+        ///     Note that this function assumes that a gravestone doji is defined as a candlestick with an open equal to the high
+        ///     and a close equal to the low, with a body that is less than 1% of the candle's high. You can adjust this threshold
+        ///     by changing the value 0.01 in the isGravestone calculation. Also, this function assumes that the input list of
+        ///     candles is sorted by date in ascending order.
+        /// </summary>
+        /// <param name="chart"></param>
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.AliceBlue, "Gravestone");

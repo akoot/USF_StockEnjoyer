@@ -7,6 +7,13 @@ namespace StocksEnjoyer.Recognizers
 {
     internal class MarobuzoRecognizer : PatternRecognizer
     {
+        /// <summary>
+        ///     Note that this function assumes that a Marubozu candle is defined as a candlestick with a very small or
+        ///     non-existent upper and lower shadow, and with an open very close to the high and a close very close to the low. You
+        ///     can adjust the threshold for what constitutes a small shadow by changing the value 0.01 in the isMarubozu
+        ///     calculation. Also, this function assumes that the input list of candles is sorted by date in ascending order.
+        /// </summary>
+        /// <param name="chart"></param>
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.Fuchsia, "Marobuzo");
