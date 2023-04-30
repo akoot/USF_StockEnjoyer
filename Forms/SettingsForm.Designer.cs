@@ -1,4 +1,4 @@
-﻿namespace StocksEnjoyer
+﻿namespace StocksEnjoyer.Forms
 {
     partial class SettingsForm
     {

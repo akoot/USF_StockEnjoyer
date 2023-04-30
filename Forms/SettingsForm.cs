@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using StocksEnjoyer.Forms;
 
-namespace StocksEnjoyer
+namespace StocksEnjoyer.Forms
 {
     /// <summary>
     ///     The Settings class is a Windows form which contains all of the controls required to view a graph of a selected CSV
@@ -16,7 +15,7 @@ namespace StocksEnjoyer
         /// <summary>
         ///     The "main" class instance.
         /// </summary>
-        private readonly StocksEnjoyerMain stocksEnjoyer = new StocksEnjoyerMain();
+        private readonly StocksEnjoyerMain _stocksEnjoyer = new StocksEnjoyerMain();
 
         /// <summary>
         ///     Windows Forms constructor.
@@ -26,7 +25,10 @@ namespace StocksEnjoyer
         /// </summary>
         public SettingsForm()
         {
+            // Initialize components (default action)
             InitializeComponent();
+            
+            // Update the CSV list combo box based on the files inside of the folder
             UpdateCsvListComboBox(null, null); // Updates the combo box
             comboBox_csvList_Changed(null, null); // Updates the "Load" button
         }
@@ -40,7 +42,10 @@ namespace StocksEnjoyer
         /// <param name="e"></param>
         private void checkBox_filter_CheckedChanged(object sender, EventArgs e)
         {
+            // Enable the filter panel only if filtering is checked
             panel_filter.Enabled = checkBox_filter.Checked;
+            
+            // Update the combo box. It could possibly be new items so it's best to reload it
             UpdateCsvListComboBox(null, null);
         }
 
@@ -70,7 +75,7 @@ namespace StocksEnjoyer
 
             // If the user does not want to filter csv files, then just fill the combo box with all of the csv file names.
             // If the user wants to filter the csv files AND one of the radio buttons are selected, then only fill the combo box with the specified radio button time period.
-            foreach (var csvFile in stocksEnjoyer.CsvFileNames)
+            foreach (var csvFile in _stocksEnjoyer.CsvFileNames)
                 if (!panel_filter.Enabled || (radioButton_daily.Checked && csvFile.Contains("Day")) ||
                     (radioButton_weekly.Checked && csvFile.Contains("Week")) ||
                     (radioButton_monthly.Checked && csvFile.Contains("Month")))
@@ -91,14 +96,18 @@ namespace StocksEnjoyer
             }
 
             //stocksEnjoyer.form_chart.LoadChart(comboBox_csvList.Text);
-            if (stocksEnjoyer.FormChart.IsDisposed) stocksEnjoyer.FormChart = new ChartForm(stocksEnjoyer);
-            stocksEnjoyer.FormChart.Show();
-            stocksEnjoyer.FormChart.Focus();
+            if (_stocksEnjoyer.FormChart.IsDisposed) _stocksEnjoyer.FormChart = new ChartForm(_stocksEnjoyer);
+            _stocksEnjoyer.FormChart.Show();
+            _stocksEnjoyer.FormChart.Focus();
         }
 
+        /// <summary>
+        /// Checks if the CSV file name in the combo box actually exists and is in the CSV file names list in memory
+        /// </summary>
+        /// <returns></returns>
         private bool IsSelectedCsvFileValid()
         {
-            return stocksEnjoyer.CsvFileNames.Contains(comboBox_csvList.Text);
+            return _stocksEnjoyer.CsvFileNames.Contains(comboBox_csvList.Text);
         }
 
         /// <summary>
@@ -109,11 +118,14 @@ namespace StocksEnjoyer
         /// <param name="e"></param>
         private void comboBox_csvList_Changed(object sender, EventArgs e)
         {
-            if (IsSelectedCsvFileValid())
-            {
-                button_load.Enabled = true;
-                stocksEnjoyer.FormChart.LoadChart(comboBox_csvList.Text);
-            }
+            // Skip doing anything if the selected CSV file does not exist
+            if (!IsSelectedCsvFileValid()) return;
+            
+            // Show the "Show Chart" button
+            button_load.Enabled = true;
+            
+            // Load the chart
+            _stocksEnjoyer.FormChart.LoadChart(comboBox_csvList.Text);
         }
 
         /// <summary>
@@ -124,10 +136,15 @@ namespace StocksEnjoyer
         /// <param name="e"></param>
         private void button_reload_Click(object sender, EventArgs e)
         {
-            stocksEnjoyer.SetupCsvFiles();
+            // Update the CSV files to memory (the list)
+            _stocksEnjoyer.SetupCsvFiles();
+            
+            // Reload the combo box to show the new files
             UpdateCsvListComboBox(null, null);
+            
+            // Tell the user that the files were loaded successfully!
             MessageBox.Show(
-                $"Loaded {stocksEnjoyer.CsvFileNames.Count} CSV files from \"{StocksEnjoyerMain.FolderPath}\"");
+                $"Loaded {_stocksEnjoyer.CsvFileNames.Count} CSV files from \"{StocksEnjoyerMain.FolderPath}\"");
         }
     }
 }
