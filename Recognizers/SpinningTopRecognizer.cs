@@ -18,7 +18,7 @@ namespace StocksEnjoyer.Recognizers
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.Crimson, "Spinning Top");
-            var candles = chart.DataSource as List<CandleStick>;
+            if (!(chart.DataSource is List<CandleStick> candles)) return;
             for (var i = 0; i < candles.Count; i++)
             {
                 var current = candles[i];

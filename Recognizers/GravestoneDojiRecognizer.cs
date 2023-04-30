@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace StocksEnjoyer
+namespace StocksEnjoyer.Recognizers
 {
     internal class GravestoneDojiRecognizer : PatternRecognizer
     {
@@ -17,7 +17,7 @@ namespace StocksEnjoyer
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.AliceBlue, "Gravestone");
-            var candles = chart.DataSource as List<CandleStick>;
+            if (!(chart.DataSource is List<CandleStick> candles)) return;
             for (var i = 0; i < candles.Count - 1; i++)
             {
                 var current = candles[i];

@@ -5,7 +5,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StocksEnjoyer.Recognizers
 {
-    internal class MarobuzoRecognizer : PatternRecognizer
+    internal class MarubozuRecognizer : PatternRecognizer
     {
         /// <summary>
         ///     Note that this function assumes that a Marubozu candle is defined as a candlestick with a very small or
@@ -16,8 +16,8 @@ namespace StocksEnjoyer.Recognizers
         /// <param name="chart"></param>
         public override void Draw(Chart chart)
         {
-            chart.Legends[0].CustomItems.Add(Color.Fuchsia, "Marobuzo");
-            var candles = chart.DataSource as List<CandleStick>;
+            chart.Legends[0].CustomItems.Add(Color.Fuchsia, "Marubozu");
+            if (!(chart.DataSource is List<CandleStick> candles)) return;
             for (var i = 0; i < candles.Count; i++)
             {
                 var current = candles[i];

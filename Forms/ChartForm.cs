@@ -5,6 +5,11 @@ using System.Windows.Forms;
 
 namespace StocksEnjoyer
 {
+    /// <summary>
+    /// Form that displays the selected CSV file.
+    /// Gives the user access to multiple pattern recognizers that can be toggled.
+    /// Each pattern recognizer will color the candlesticks a certain color if they meet the criteria.
+    /// </summary>
     public partial class ChartForm : Form
     {
         private string SelectedCSVFile;

@@ -54,7 +54,7 @@ namespace StocksEnjoyer
             PatternRecognizers["Gravestone"] = new GravestoneDojiRecognizer();
             PatternRecognizers["Hammer"] = new HammerRecognizer();
             PatternRecognizers["Inverted Hammer"] = new InvertedHammerRecognizer();
-            PatternRecognizers["Marobuzo"] = new MarobuzoRecognizer();
+            PatternRecognizers["Marobuzo"] = new MarubozuRecognizer();
             PatternRecognizers["Spinning Top"] = new SpinningTopRecognizer();
             PatternRecognizers["Harami"] = new HaramiRecognizer();
         }

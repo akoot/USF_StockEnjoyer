@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms.DataVisualization.Charting;
 
-namespace StocksEnjoyer
+namespace StocksEnjoyer.Recognizers
 {
     /// <summary>
     /// A Pattern Recognizer class is meant to be used as an abstract class which implements the function
