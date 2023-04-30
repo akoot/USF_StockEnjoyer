@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StocksEnjoyer.Recognizers
@@ -14,18 +11,16 @@ namespace StocksEnjoyer.Recognizers
         {
             chart.Legends[0].CustomItems.Add(Color.Fuchsia, "Marobuzo");
             var candles = chart.DataSource as List<CandleStick>;
-            for (int i = 0; i < candles.Count; i++)
+            for (var i = 0; i < candles.Count; i++)
             {
-                CandleStick current = candles[i];
+                var current = candles[i];
 
                 // check if the current candle is a marubozu
-                bool isMarubozu = Math.Abs(current.Open - current.High) < 0.01 * current.High && Math.Abs(current.Close - current.Low) < 0.01 * current.High;
+                var isMarubozu = Math.Abs(current.Open - current.High) < 0.01 * current.High &&
+                                 Math.Abs(current.Close - current.Low) < 0.01 * current.High;
 
                 // if the current candle is a marubozu, add its index to the result list
-                if (isMarubozu)
-                {
-                    chart.Series[0].Points[i + 1].Color = Color.Fuchsia;
-                }
+                if (isMarubozu) chart.Series[0].Points[i + 1].Color = Color.Fuchsia;
             }
         }
     }

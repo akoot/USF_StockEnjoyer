@@ -1,40 +1,52 @@
-﻿using StocksEnjoyer.Recognizers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using StocksEnjoyer.Recognizers;
 
 // if i wasn't limited to .net windows forms this would actually look good
 // i refuse to programatically set the "paint" of a button and whatnot or whatever
 // but at least this will run on a computer from 2002!!!!
 namespace StocksEnjoyer
 {
+    /// <summary>
+    ///     This is the main class that will contain most of the data that needs to be shared between classes and forms.
+    /// </summary>
     public class StocksEnjoyerMain
     {
+        // This is the default directory where all the CSV files are held.
+        // Due to budget cuts and time constraints our team was not able to
+        // implement a function to change this directory during runtime.
+        public const string FolderPath = "Stock Data"; // replace with your folder path
 
-        public string folderPath = "Stock Data"; // replace with your folder path
+        // This dictionary holds all of the pattern recognizers to be later used during runtime.
+        // The name of the pattern is the key, and the actual object is the value.
+        // If I want to get the Doji pattern recognizer, I run PatternRecognizers["Doji"];
+        public readonly Dictionary<string, PatternRecognizer> PatternRecognizers =
+            new Dictionary<string, PatternRecognizer>();
 
-        public List<CandleStick> CandleStickList;
+        // This is used to populate the combo box displaying the CSV files.
         public List<string> CsvFileNames = new List<string>();
 
-        public Dictionary<string, PatternRecognizer> PatternRecognizers = new Dictionary<string, PatternRecognizer>();
-
-        public string SelectedCSVFile = "";
+        /// <summary>
+        ///     The "chart" form instance
+        /// </summary>
+        public ChartForm FormChart;
 
         /// <summary>
-        /// The "chart" form instance
+        /// The main constructor for the main class.
+        /// This will load all of the candlesticks into memory
         /// </summary>
-        public ChartForm form_chart;
-        public StocksEnjoyerMain() {
-            LoadCandlesticks();
+        public StocksEnjoyerMain()
+        {
+            SetupCsvFiles();
             SetupRecognizers();
-            form_chart = new ChartForm(this);
+            FormChart = new ChartForm(this);
         }
 
-        public void SetupRecognizers()
+        /// <summary>
+        ///     This function sets up all of the recognizer abstract classes.
+        /// </summary>
+        private void SetupRecognizers()
         {
             PatternRecognizers["Doji"] = new DojiRecognizer();
             PatternRecognizers["Dragonfly"] = new DragonflyDojiRecognizer();
@@ -48,42 +60,56 @@ namespace StocksEnjoyer
         }
 
         /// <summary>
-        /// Loads all of the candlesticks into memory.
-        /// This looks inside of the "Stock Data" folder located where the program's executable is.
-        /// This function can be called any time during runtime to reload the list of CSV files.
+        ///     Loads all of the candlesticks into memory.
+        ///     This looks inside of the "Stock Data" folder located where the program's executable is.
+        ///     This function can be called any time during runtime to reload the list of CSV files.
         /// </summary>
-        public void LoadCandlesticks()
+        public void SetupCsvFiles()
         {
-            // Create a new list for both candlesticks and csv file names.
-            CandleStickList = new List<CandleStick>();
+            // Create a new list for csv file names.
             CsvFileNames = new List<string>();
-
-            var csvFiles = Directory.GetFiles(folderPath, "*.csv");
-            foreach (string csvFile in csvFiles)
-            {
-                CsvFileNames.Add(Path.GetFileName(csvFile));
-                foreach (CandleStick candleStick in LoadCSV(Path.GetFileName(csvFile)))
-                {
-                    CandleStickList.Add(candleStick); // what a cringe way to do this in C#
-                }
-            }
-            Console.WriteLine($"Loaded {csvFiles.Length} .csv files in {folderPath}.");
+            
+            // Get the list of CSV files inside the FolderPath
+            var csvFiles = Directory.GetFiles(FolderPath, "*.csv");
+            
+            // Save only the names and not the full path into the variable.
+            foreach (var csvFile in csvFiles) CsvFileNames.Add(Path.GetFileName(csvFile));
+            
+            // Log this to help
+            Console.WriteLine($"Loaded {csvFiles.Length} .csv files in {FolderPath}.");
         }
 
-        public List<CandleStick> LoadCSV(string csvFile)
+        /// <summary>
+        /// Loads the CSV file provided and creates a CandleStick object for every line in that file.
+        /// </summary>
+        /// <param name="csvFile"></param>
+        /// <returns></returns>
+        public static List<CandleStick> LoadCsv(string csvFile)
         {
+            // Create an empty list to fill with candlesticks
             var candleSticks = new List<CandleStick>();
-            string[] lines = File.ReadAllLines($@"{folderPath}\{csvFile}");
-            for (int i = 1; i < lines.Length; i++)
+            
+            // Get the lines from each file
+            var lines = File.ReadAllLines($@"{FolderPath}\{csvFile}");
+            
+            // For each line, create a CandleStick object using the data separated by a comma.
+            for (var i = 1; i < lines.Length; i++)
             {
-                string[] csv = lines[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                // Split each line with a comma and remove empty entries.
+                var csv = lines[i].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                
+                // Add a new CandleStick object to the list of candlesticks defined above
                 candleSticks.Add(new CandleStick(DateTime.Parse(csv[0].Trim('"')),
                     double.Parse(csv[1]),
                     double.Parse(csv[2]),
                     double.Parse(csv[3]),
                     double.Parse(csv[4]),
+                    // This would account for the old csv file format that was not downloaded from Yahoo
+                    // but rather it was provided.
                     double.Parse(csv.Length == 7 ? csv[5] : csv[4]))); // not necessary but maybe...
             }
+            
+            // Return the list of candlesticks.
             return candleSticks;
         }
     }
