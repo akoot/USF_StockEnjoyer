@@ -34,8 +34,8 @@ namespace StocksEnjoyer
         public ChartForm FormChart;
 
         /// <summary>
-        /// The main constructor for the main class.
-        /// This will load all of the candlesticks into memory
+        ///     The main constructor for the main class.
+        ///     This will load all of the candlesticks into memory
         /// </summary>
         public StocksEnjoyerMain()
         {
@@ -69,19 +69,19 @@ namespace StocksEnjoyer
         {
             // Create a new list for csv file names.
             CsvFileNames = new List<string>();
-            
+
             // Get the list of CSV files inside the FolderPath
             var csvFiles = Directory.GetFiles(FolderPath, "*.csv");
-            
+
             // Save only the names and not the full path into the variable.
             foreach (var csvFile in csvFiles) CsvFileNames.Add(Path.GetFileName(csvFile));
-            
+
             // Log this to help
             Console.WriteLine($"Loaded {csvFiles.Length} .csv files in {FolderPath}.");
         }
 
         /// <summary>
-        /// Loads the CSV file provided and creates a CandleStick object for every line in that file.
+        ///     Loads the CSV file provided and creates a CandleStick object for every line in that file.
         /// </summary>
         /// <param name="csvFile"></param>
         /// <returns></returns>
@@ -89,16 +89,16 @@ namespace StocksEnjoyer
         {
             // Create an empty list to fill with candlesticks
             var candleSticks = new List<CandleStick>();
-            
+
             // Get the lines from each file
             var lines = File.ReadAllLines($@"{FolderPath}\{csvFile}");
-            
+
             // For each line, create a CandleStick object using the data separated by a comma.
             for (var i = 1; i < lines.Length; i++)
             {
                 // Split each line with a comma and remove empty entries.
                 var csv = lines[i].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                
+
                 // Add a new CandleStick object to the list of candlesticks defined above
                 candleSticks.Add(new CandleStick(DateTime.Parse(csv[0].Trim('"')),
                     double.Parse(csv[1]),
@@ -109,7 +109,7 @@ namespace StocksEnjoyer
                     // but rather it was provided.
                     double.Parse(csv.Length == 7 ? csv[5] : csv[4]))); // not necessary but maybe...
             }
-            
+
             // Return the list of candlesticks.
             return candleSticks;
         }

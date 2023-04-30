@@ -27,7 +27,7 @@ namespace StocksEnjoyer.Forms
         {
             // Initialize components (default action)
             InitializeComponent();
-            
+
             // Update the CSV list combo box based on the files inside of the folder
             UpdateCsvListComboBox(null, null); // Updates the combo box
             comboBox_csvList_Changed(null, null); // Updates the "Load" button
@@ -44,7 +44,7 @@ namespace StocksEnjoyer.Forms
         {
             // Enable the filter panel only if filtering is checked
             panel_filter.Enabled = checkBox_filter.Checked;
-            
+
             // Update the combo box. It could possibly be new items so it's best to reload it
             UpdateCsvListComboBox(null, null);
         }
@@ -102,7 +102,7 @@ namespace StocksEnjoyer.Forms
         }
 
         /// <summary>
-        /// Checks if the CSV file name in the combo box actually exists and is in the CSV file names list in memory
+        ///     Checks if the CSV file name in the combo box actually exists and is in the CSV file names list in memory
         /// </summary>
         /// <returns></returns>
         private bool IsSelectedCsvFileValid()
@@ -120,10 +120,10 @@ namespace StocksEnjoyer.Forms
         {
             // Skip doing anything if the selected CSV file does not exist
             if (!IsSelectedCsvFileValid()) return;
-            
+
             // Show the "Show Chart" button
             button_load.Enabled = true;
-            
+
             // Load the chart
             _stocksEnjoyer.FormChart.LoadChart(comboBox_csvList.Text);
         }
@@ -138,10 +138,10 @@ namespace StocksEnjoyer.Forms
         {
             // Update the CSV files to memory (the list)
             _stocksEnjoyer.SetupCsvFiles();
-            
+
             // Reload the combo box to show the new files
             UpdateCsvListComboBox(null, null);
-            
+
             // Tell the user that the files were loaded successfully!
             MessageBox.Show(
                 $"Loaded {_stocksEnjoyer.CsvFileNames.Count} CSV files from \"{StocksEnjoyerMain.FolderPath}\"");
