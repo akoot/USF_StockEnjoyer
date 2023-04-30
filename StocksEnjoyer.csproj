@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CandleStick.cs" />
     <Compile Include="Recognizers\EveningStartRecognizer.cs" />
     <Compile Include="Recognizers\MorningStarRecognizer.cs" />
     <Compile Include="Recognizers\HaramiRecognizer.cs" />
@@ -59,10 +60,9 @@
     <Compile Include="Recognizers\GravestoneDojiRecognizer.cs" />
     <Compile Include="Recognizers\DragonflyDojiRecognizer.cs" />
     <Compile Include="StocksEnjoyer.cs" />
-    <Compile Include="CandleStick.cs" />
     <Compile Include="Recognizers\HammerRecognizer.cs" />
     <Compile Include="Recognizers\DojiRecognizer.cs" />
-    <Compile Include="Recognizers\Recognizer.cs" />
+    <Compile Include="Recognizers\PatternRecognizer.cs" />
     <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +93,7 @@
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\CandleStick.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -20,7 +20,9 @@ namespace StocksEnjoyer
         public List<CandleStick> CandleStickList;
         public List<string> CsvFileNames = new List<string>();
 
-        public Dictionary<string, Recognizer> Recognizers = new Dictionary<string, Recognizer>();
+        public Dictionary<string, PatternRecognizer> PatternRecognizers = new Dictionary<string, PatternRecognizer>();
+
+        public string SelectedCSVFile = "";
 
         /// <summary>
         /// The "chart" form instance
@@ -34,15 +36,15 @@ namespace StocksEnjoyer
 
         public void SetupRecognizers()
         {
-            Recognizers["Doji"] = new DojiRecognizer();
-            Recognizers["Dragonfly"] = new DragonflyDojiRecognizer();
-            Recognizers["Evening Star"] = new EveningStartRecognizer();
-            Recognizers["Gravestone"] = new GravestoneDojiRecognizer();
-            Recognizers["Hammer"] = new HammerRecognizer();
-            Recognizers["Inverted Hammer"] = new InvertedHammerRecognizer();
-            Recognizers["Marobuzo"] = new MarobuzoRecognizer();
-            Recognizers["Spinning Top"] = new SpinningTopRecognizer();
-            Recognizers["Harami"] = new HaramiRecognizer();
+            PatternRecognizers["Doji"] = new DojiRecognizer();
+            PatternRecognizers["Dragonfly"] = new DragonflyDojiRecognizer();
+            PatternRecognizers["Evening Star"] = new EveningStartRecognizer();
+            PatternRecognizers["Gravestone"] = new GravestoneDojiRecognizer();
+            PatternRecognizers["Hammer"] = new HammerRecognizer();
+            PatternRecognizers["Inverted Hammer"] = new InvertedHammerRecognizer();
+            PatternRecognizers["Marobuzo"] = new MarobuzoRecognizer();
+            PatternRecognizers["Spinning Top"] = new SpinningTopRecognizer();
+            PatternRecognizers["Harami"] = new HaramiRecognizer();
         }
 
         /// <summary>

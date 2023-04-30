@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StocksEnjoyer
 {
@@ -23,8 +24,8 @@ namespace StocksEnjoyer
 
         private void SetupPatternRecognizers()
         {
-            Console.WriteLine($"Loaded {stocksEnjoyer.Recognizers.Count} pattern recognizers.");
-            foreach (string recognizer in stocksEnjoyer.Recognizers.Keys)
+            Console.WriteLine($"Loaded {stocksEnjoyer.PatternRecognizers.Count} pattern recognizers.");
+            foreach (string recognizer in stocksEnjoyer.PatternRecognizers.Keys)
             {
                 var checkbox = new CheckBox();
                 checkbox.Text = recognizer;
@@ -54,20 +55,31 @@ namespace StocksEnjoyer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dateTimePicker_start_ValueChanged(object sender, EventArgs e)
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            //TODO: Update chart
+            UpdateChartData();
         }
 
-        /// <summary>
-        /// Fired when the user changes the dateTimePicker value.
-        /// This will update the chart.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dateTimePicker_end_ValueChanged(object sender, EventArgs e)
+        private void UpdateChartData()
         {
-            //TODO: Update chart
+            chart_stock.DataSource = GetCandleSticks(dateTimePicker_start.Value, dateTimePicker_end.Value);
+            chart_stock.DataBind();
+        }
+
+        private List<CandleStick> GetCandleSticks(DateTime from, DateTime to)
+        {
+            var candleSticks = new List<CandleStick>();
+            foreach (CandleStick candleStick in stocksEnjoyer.CandleStickList)
+            {
+                if (candleStick.Date >= from && candleStick.Date <= to) candleSticks.Add(candleStick);
+            }
+            return candleSticks;
+        }
+
+        internal void LoadChart(string selectedCSVFile)
+        {
+            chart_stock.Titles[0].Text = selectedCSVFile;
+            chart_stock.Series[0].Name = selectedCSVFile;
         }
     }
 }

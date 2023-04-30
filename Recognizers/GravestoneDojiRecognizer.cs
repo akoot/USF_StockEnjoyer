@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StocksEnjoyer
 {
-    internal class GravestoneDojiRecognizer : Recognizer
+    internal class GravestoneDojiRecognizer : PatternRecognizer
     {
         public override int[] Recognize(List<CandleStick> candleSticks)
         {

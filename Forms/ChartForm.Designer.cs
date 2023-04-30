@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChartForm));
             this.chart_stock = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.splitContainer_main = new System.Windows.Forms.SplitContainer();
@@ -73,7 +74,9 @@
             this.chart_stock.Series.Add(series1);
             this.chart_stock.Size = new System.Drawing.Size(858, 548);
             this.chart_stock.TabIndex = 0;
-            this.chart_stock.Text = "chart1";
+            this.chart_stock.Text = "Stonks";
+            title1.Name = "Title1";
+            this.chart_stock.Titles.Add(title1);
             // 
             // splitContainer_main
             // 
@@ -146,7 +149,7 @@
             this.dateTimePicker_start.ShowUpDown = true;
             this.dateTimePicker_start.Size = new System.Drawing.Size(175, 26);
             this.dateTimePicker_start.TabIndex = 4;
-            this.dateTimePicker_start.ValueChanged += new System.EventHandler(this.dateTimePicker_start_ValueChanged);
+            this.dateTimePicker_start.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // label_endDate
             // 
@@ -179,7 +182,7 @@
             this.dateTimePicker_end.ShowUpDown = true;
             this.dateTimePicker_end.Size = new System.Drawing.Size(176, 26);
             this.dateTimePicker_end.TabIndex = 6;
-            this.dateTimePicker_end.ValueChanged += new System.EventHandler(this.dateTimePicker_end_ValueChanged);
+            this.dateTimePicker_end.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // label_patterns
             // 

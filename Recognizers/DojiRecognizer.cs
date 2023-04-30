@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace StocksEnjoyer
 {
-    internal class DojiRecognizer : Recognizer
+    internal class DojiRecognizer : PatternRecognizer
     {
         public override int[] Recognize(List<CandleStick> candleSticks)
         {

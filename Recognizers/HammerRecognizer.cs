@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace StocksEnjoyer
 {
-    internal class HammerRecognizer : Recognizer
+    internal class HammerRecognizer : PatternRecognizer
     {
         public override int[] Recognize(List<CandleStick> candleSticks)
         {

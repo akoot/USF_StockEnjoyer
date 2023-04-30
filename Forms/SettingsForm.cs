@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace StocksEnjoyer
 {
@@ -92,7 +94,7 @@ namespace StocksEnjoyer
                 MessageBox.Show("Invalid CSV file specified!");
                 return;
             }
-            // TODO: DataBind
+            stocksEnjoyer.form_chart.LoadChart(comboBox_csvList.Text);
             if (stocksEnjoyer.form_chart.IsDisposed) stocksEnjoyer.form_chart = new ChartForm(stocksEnjoyer);
             stocksEnjoyer.form_chart.Show();
             stocksEnjoyer.form_chart.Focus();

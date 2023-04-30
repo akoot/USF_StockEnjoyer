@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StocksEnjoyer.Recognizers
 {
-    internal class EveningStartRecognizer : Recognizer
+    internal class EveningStartRecognizer : PatternRecognizer
     {
         public override int[] Recognize(List<CandleStick> candleSticks)
         {

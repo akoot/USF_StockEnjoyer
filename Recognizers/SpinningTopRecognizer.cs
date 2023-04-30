@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StocksEnjoyer.Recognizers
 {
-    internal class SpinningTopRecognizer : Recognizer
+    internal class SpinningTopRecognizer : PatternRecognizer
     {
         public override int[] Recognize(List<CandleStick> candleSticks)
         {
