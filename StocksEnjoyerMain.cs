@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using StocksEnjoyer.Forms;
 using StocksEnjoyer.Recognizers;
 
 // if i wasn't limited to .net windows forms this would actually look good
