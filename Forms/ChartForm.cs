@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using CheckBox = System.Windows.Forms.CheckBox;
 
 namespace StocksEnjoyer
 {
@@ -53,12 +55,7 @@ namespace StocksEnjoyer
             if (enabled) selectedPatterns.Add(checkbox.Text);
             else selectedPatterns.Remove(checkbox.Text);
 
-            if (enabled)
-            {
-                stocksEnjoyer.PatternRecognizers[checkbox.Text].Draw(chart_stock);
-                //Console.WriteLine($"{checkbox.Text} pattern indices: {string.Join(", ",patterns)}");
-            }
-            //Console.WriteLine($"{checkbox.Text}: {enabled}");
+            UpdateChartData();
         }
 
         /// <summary>
@@ -76,6 +73,11 @@ namespace StocksEnjoyer
         {
             chart_stock.DataSource = GetCandleSticks(dateTimePicker_start.Value, dateTimePicker_end.Value);
             chart_stock.DataBind();
+            chart_stock.Legends[0].CustomItems.Clear();
+            foreach (string selectedPattern in selectedPatterns)
+            {
+                stocksEnjoyer.PatternRecognizers[selectedPattern].Draw(chart_stock);
+            }
         }
 
         private List<CandleStick> GetCandleSticks(DateTime from, DateTime to)

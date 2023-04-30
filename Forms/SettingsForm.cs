@@ -94,7 +94,7 @@ namespace StocksEnjoyer
                 MessageBox.Show("Invalid CSV file specified!");
                 return;
             }
-            stocksEnjoyer.form_chart.LoadChart(comboBox_csvList.Text);
+            //stocksEnjoyer.form_chart.LoadChart(comboBox_csvList.Text);
             if (stocksEnjoyer.form_chart.IsDisposed) stocksEnjoyer.form_chart = new ChartForm(stocksEnjoyer);
             stocksEnjoyer.form_chart.Show();
             stocksEnjoyer.form_chart.Focus();
@@ -113,7 +113,11 @@ namespace StocksEnjoyer
         /// <param name="e"></param>
         private void comboBox_csvList_Changed(object sender, EventArgs e)
         {
-            button_load.Enabled = IsSelectedCsvFileValid();
+            if (IsSelectedCsvFileValid())
+            {
+                button_load.Enabled = true;
+                stocksEnjoyer.form_chart.LoadChart(comboBox_csvList.Text);
+            }
         }
 
         /// <summary>

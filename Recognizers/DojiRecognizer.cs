@@ -13,7 +13,7 @@ namespace StocksEnjoyer
     {
         public override void Draw(Chart chart)
         {
-            var points = chart.Series[0].Points;
+            chart.Legends[0].CustomItems.Add(Color.Red, "Doji");
             var candleSticks = chart.DataSource as List<CandleStick>;
             for (int i = 0; i < candleSticks.Count - 1; i++)
             {
