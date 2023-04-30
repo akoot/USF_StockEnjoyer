@@ -14,11 +14,11 @@ namespace StocksEnjoyer
         public override void Draw(Chart chart)
         {
             chart.Legends[0].CustomItems.Add(Color.Red, "Doji");
-            var candleSticks = chart.DataSource as List<CandleStick>;
-            for (int i = 0; i < candleSticks.Count - 1; i++)
+            var candles = chart.DataSource as List<CandleStick>;
+            for (int i = 0; i < candles.Count - 1; i++)
             {
-                CandleStick current = candleSticks[i];
-                CandleStick next = candleSticks[i + 1];
+                CandleStick current = candles[i];
+                CandleStick next = candles[i + 1];
 
                 // check if the current candle is a doji
                 bool isDoji = Math.Abs(current.Open - current.Close) < 0.01 * current.High;
