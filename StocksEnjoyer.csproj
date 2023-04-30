@@ -59,7 +59,7 @@
     <Compile Include="Recognizers\InvertedHammerRecognizer.cs" />
     <Compile Include="Recognizers\GravestoneDojiRecognizer.cs" />
     <Compile Include="Recognizers\DragonflyDojiRecognizer.cs" />
-    <Compile Include="StocksEnjoyer.cs" />
+    <Compile Include="StocksEnjoyerMain.cs" />
     <Compile Include="Recognizers\HammerRecognizer.cs" />
     <Compile Include="Recognizers\DojiRecognizer.cs" />
     <Compile Include="Recognizers\PatternRecognizer.cs" />

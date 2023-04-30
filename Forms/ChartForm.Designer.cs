@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -44,6 +45,7 @@
             this.dateTimePicker_end = new System.Windows.Forms.DateTimePicker();
             this.label_patterns = new System.Windows.Forms.Label();
             this.panel_patterns = new System.Windows.Forms.FlowLayoutPanel();
+            this.candleStickBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chart_stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_main)).BeginInit();
             this.splitContainer_main.Panel1.SuspendLayout();
@@ -54,23 +56,26 @@
             this.splitContainer_settings.Panel2.SuspendLayout();
             this.splitContainer_settings.SuspendLayout();
             this.panel_timePeriod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.candleStickBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chart_stock
             // 
             chartArea1.Name = "ChartArea1";
             this.chart_stock.ChartAreas.Add(chartArea1);
+            this.chart_stock.DataSource = this.candleStickBindingSource;
             this.chart_stock.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart_stock.Legends.Add(legend1);
             this.chart_stock.Location = new System.Drawing.Point(0, 0);
             this.chart_stock.Name = "chart_stock";
-            this.chart_stock.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Candlestick;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.XValueMember = "Date";
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series1.YValueMembers = "Low, High, Close, Open";
             series1.YValuesPerPoint = 4;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart_stock.Series.Add(series1);
@@ -208,6 +213,10 @@
             this.panel_patterns.Size = new System.Drawing.Size(203, 370);
             this.panel_patterns.TabIndex = 0;
             // 
+            // candleStickBindingSource
+            // 
+            this.candleStickBindingSource.DataSource = typeof(StocksEnjoyer.CandleStick);
+            // 
             // ChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +238,7 @@
             this.splitContainer_settings.ResumeLayout(false);
             this.panel_timePeriod.ResumeLayout(false);
             this.panel_timePeriod.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.candleStickBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +256,6 @@
         private System.Windows.Forms.FlowLayoutPanel panel_patterns;
         private System.Windows.Forms.Label label_patterns;
         private System.Windows.Forms.Panel panel_timePeriod;
+        private System.Windows.Forms.BindingSource candleStickBindingSource;
     }
 }

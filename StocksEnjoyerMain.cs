@@ -12,7 +12,7 @@ using System.Windows.Forms;
 // but at least this will run on a computer from 2002!!!!
 namespace StocksEnjoyer
 {
-    public class StocksEnjoyer
+    public class StocksEnjoyerMain
     {
 
         public string folderPath = "Stock Data"; // replace with your folder path
@@ -28,7 +28,7 @@ namespace StocksEnjoyer
         /// The "chart" form instance
         /// </summary>
         public ChartForm form_chart;
-        public StocksEnjoyer() {
+        public StocksEnjoyerMain() {
             LoadCandlesticks();
             SetupRecognizers();
             form_chart = new ChartForm(this);
@@ -62,19 +62,29 @@ namespace StocksEnjoyer
             foreach (string csvFile in csvFiles)
             {
                 CsvFileNames.Add(Path.GetFileName(csvFile));
-                string[] lines = File.ReadAllLines(csvFile);
-                for (int i = 1; i < lines.Length; i++)
+                foreach (CandleStick candleStick in LoadCSV(Path.GetFileName(csvFile)))
                 {
-                    string[] csv = lines[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    CandleStickList.Add(new CandleStick(DateTime.Parse(csv[0].Trim('"')),
-                        double.Parse(csv[1]),
-                        double.Parse(csv[2]),
-                        double.Parse(csv[3]),
-                        double.Parse(csv[4]),
-                        double.Parse(csv.Length == 7 ? csv[5] : csv[4]))); // not necessary but maybe...
+                    CandleStickList.Add(candleStick); // what a cringe way to do this in C#
                 }
             }
             Console.WriteLine($"Loaded {csvFiles.Length} .csv files in {folderPath}.");
+        }
+
+        public List<CandleStick> LoadCSV(string csvFile)
+        {
+            var candleSticks = new List<CandleStick>();
+            string[] lines = File.ReadAllLines($@"{folderPath}\{csvFile}");
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] csv = lines[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                candleSticks.Add(new CandleStick(DateTime.Parse(csv[0].Trim('"')),
+                    double.Parse(csv[1]),
+                    double.Parse(csv[2]),
+                    double.Parse(csv[3]),
+                    double.Parse(csv[4]),
+                    double.Parse(csv.Length == 7 ? csv[5] : csv[4]))); // not necessary but maybe...
+            }
+            return candleSticks;
         }
     }
 }

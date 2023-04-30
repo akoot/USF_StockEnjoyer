@@ -13,9 +13,10 @@ namespace StocksEnjoyer
 {
     public partial class ChartForm : Form
     {
-        private StocksEnjoyer stocksEnjoyer;
+        private StocksEnjoyerMain stocksEnjoyer;
+        private string SelectedCSVFile;
 
-        public ChartForm(StocksEnjoyer stocksEnjoyer)
+        public ChartForm(StocksEnjoyerMain stocksEnjoyer)
         {
             this.stocksEnjoyer = stocksEnjoyer;
             InitializeComponent();
@@ -62,25 +63,14 @@ namespace StocksEnjoyer
 
         private void UpdateChartData()
         {
-            //chart_stock.DataSource = GetCandleSticks(dateTimePicker_start.Value, dateTimePicker_end.Value);
-            //chart_stock.DataBind();
-            chart_stock.Series[0].Points.Clear();
-            foreach (CandleStick candlestick in GetCandleSticks(dateTimePicker_start.Value, dateTimePicker_end.Value))
-            {
-                chart_stock.Series[0].Points.AddXY(
-                    candlestick.Date,
-                    candlestick.Low,
-                    candlestick.High,
-                    candlestick.Close,
-                    candlestick.Open
-                );
-            }
+            chart_stock.DataSource = GetCandleSticks(dateTimePicker_start.Value, dateTimePicker_end.Value);
+            chart_stock.DataBind();
         }
 
         private List<CandleStick> GetCandleSticks(DateTime from, DateTime to)
         {
             var candleSticks = new List<CandleStick>();
-            foreach (CandleStick candleStick in stocksEnjoyer.CandleStickList)
+            foreach (CandleStick candleStick in stocksEnjoyer.LoadCSV(SelectedCSVFile))
             {
                 if (candleStick.Date >= from && candleStick.Date <= to) candleSticks.Add(candleStick);
             }
@@ -91,6 +81,8 @@ namespace StocksEnjoyer
         {
             chart_stock.Titles[0].Text = selectedCSVFile;
             chart_stock.Series[0].Name = selectedCSVFile;
+            SelectedCSVFile = selectedCSVFile;
+            UpdateChartData();
         }
     }
 }

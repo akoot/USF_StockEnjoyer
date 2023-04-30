@@ -23,7 +23,7 @@ namespace StocksEnjoyer
         /// <summary>
         /// The "main" class instance.
         /// </summary>
-        readonly StocksEnjoyer stocksEnjoyer = new StocksEnjoyer();
+        readonly StocksEnjoyerMain stocksEnjoyer = new StocksEnjoyerMain();
 
         /// <summary>
         /// Windows Forms constructor.
